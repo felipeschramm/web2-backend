@@ -13,7 +13,10 @@ routes.post("/home", async(req, res) =>{
 
 routes.get("/home/:nome",  async(req,res)=>{
     console.log(req.params.nome);
-    const atividade = await Atividade.find({'nome': req.params.nome});
+    const atividade = await Atividade.find()
+    .and(
+      {'nome': req.params.nome}
+    )
     return res.json(atividade);
   });
 
