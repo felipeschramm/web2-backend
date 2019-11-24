@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
 
-mongoose.connect("mongodb+srv://deploy:felipe@cluster0-vpeoz.mongodb.net/test?retryWrites=true&w=majority", {
+mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true
 });
 
