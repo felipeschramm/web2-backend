@@ -7,13 +7,17 @@
     "dev": "nodemon src/index.js",
     "start": "node src/index.js"
   },
+  "engines": {
+    "node": "11.14.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felipeschramm/web2-backend.git"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "mongoose": "^5.4.5"
-  },
-  "engines": {
-    "node": "11.14.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.9"
