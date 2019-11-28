@@ -1,10 +1,11 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const supertest = require('supertest');
 const cors = require("cors");
 const routes = require('./routes');
 const app = express();
 
-mongoose.connect(process.env.MONGO_URL, {
+mongoose.connect("mongodb+srv://deploy:QY41iNEwZV7uJUlC@cluster0-vpeoz.mongodb.net/test?retryWrites=true&w=majority", {
   useNewUrlParser: true
 });
 
@@ -13,8 +14,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/api", routes)
 
-app.listen(process.env.PORT || 3000);
+app.use(function(req, res, next) {
+  return res.status(404).send({ message: 'Route'+req.url+' Not found.' });
+});
 
 mongoose.connection.on('connected', function () {
-    console.log('Servidor Iniciado');
-  });
+  console.log('Servidor Iniciado');
+});
+
+module.exports= app.listen(process.env.PORT || 3001);
+
+
+

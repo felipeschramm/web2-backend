@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "test":"mocha"
   },
   "engines": {
     "node": "11.14.0"
@@ -15,9 +16,13 @@
     "url": "git+https://github.com/felipeschramm/web2-backend.git"
   },
   "dependencies": {
+    "chai": "^4.2.0",
     "cors": "^2.8.5",
     "express": "^4.16.4",
-    "mongoose": "^5.4.5"
+    "mocha": "^6.2.2",
+    "mongoose": "^5.4.5",
+    "should": "^13.2.3",
+    "supertest": "^4.0.2"
   },
   "devDependencies": {
     "nodemon": "^1.18.9"
