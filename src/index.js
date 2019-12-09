@@ -1,12 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const supertest = require('supertest');
 const cors = require("cors");
 const routes = require('./routes');
 const app = express();
 
 mongoose.connect("mongodb+srv://deploy:QY41iNEwZV7uJUlC@cluster0-vpeoz.mongodb.net/test?retryWrites=true&w=majority", {
-  useNewUrlParser: true
+  useNewUrlParser: true,
+  poolSize:5
 });
 
 app.use(cors());
@@ -22,7 +22,9 @@ mongoose.connection.on('connected', function () {
   console.log('Servidor Iniciado');
 });
 
-module.exports= app.listen(process.env.PORT || 3001);
+app.listen(process.env.PORT || 3001);
+
+module.exports = app;
 
 
 

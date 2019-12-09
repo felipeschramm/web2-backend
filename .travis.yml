@@ -1,1 +1,7 @@
+sudo: false
 language: node_js
+node_js:
+ - lts/*
+ services:
+  - mongodb
+ scrpit: npm run test
