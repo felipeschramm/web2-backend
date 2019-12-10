@@ -4,4 +4,8 @@ node_js:
  - lts/*
  services:
   - mongodb
+<<<<<<< HEAD
  scrpit: npm run test
+=======
+ scrpit: npm run test
+>>>>>>> 58893974bd20fa88f76a6d3d9ae15ad9c513e201
